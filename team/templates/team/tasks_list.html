@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{ employee.user_first_name }} {{ employee.user_last_name }}'s tasks</h1>
+  <h1>{{ single_employee_task.user_first_name }} {{ single_employee_task.user_last_name }}'s tasks</h1>
+  <p><a href={% url 'add_task' %}>Add task</a></p>
   <ul>
-    {% for task in tasks %}
-      <li>{{ task.task_title }} {{ task.task_status }}</li>
+    {% for task in single_employee_task.employee_task.all %}
+      <li><a href={% url 'task_id' pk=task.id%}>{{ task }}</li>
     {% endfor %}
   </ul>
 {% endblock %}

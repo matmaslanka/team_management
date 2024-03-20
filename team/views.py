@@ -1,5 +1,8 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 
 from .models import Employee, Task
 
@@ -10,11 +13,17 @@ class EmployeesView(ListView):
     model = Employee
     context_object_name = 'employees'
 
-
-class TasksView(ListView):
-    template_name = 'team/tasks_list.html'
+class AddTaskView(CreateView):
     model = Task
-    context_object_name = 'tasks'
+    fields = '__all__'
+    template_name = 'team/add_task.html'
+    success_url = '/'
+
+
+class TasksView(DetailView):
+    template_name = 'team/tasks_list.html'
+    model = Employee
+    context_object_name = 'single_employee_task'
 
 
 class SingleTaskView(DetailView):
