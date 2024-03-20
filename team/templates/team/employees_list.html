@@ -1,12 +1,15 @@
-{%extends 'team/base.html'%}
+{% extends 'team/base.html' %}
 
 {% block title %}
-Employees list
+  Employees list
 {% endblock %}
 
 {% block content %}
-<ul>
-    <li>Zbigniew Kowalski</li>
-    <li>Jan Nowak</li>
-</ul>
+  <h1>Team Manegament</h1>
+  <h2>List of Employees</h2>
+  <ul>
+    {% for employee in employees %}
+      <li>{{ employee.user_first_name }} {{ employee.user_last_name }}</li>
+    {% endfor %}
+  </ul>
 {% endblock %}
