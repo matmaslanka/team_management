@@ -6,5 +6,6 @@
 
 {% block content %}
   <h1>{{ single_task.task_title }} ({{ single_task.task_status }})</h1>
+  <p><a href="{% url 'update_task' pk=single_task.id%}">Update task</a>
   <p>{{ single_task.task_description }}</p>
 {% endblock %}
