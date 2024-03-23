@@ -1,12 +1,18 @@
 {% extends 'team/base.html' %}
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "team/list_style.css" %}">
+  <link rel="stylesheet" href="{% static "team/description.css" %}">
+{% endblock %}
 
 {% block title %}
   Task list
 {% endblock %}
 
 {% block content %}
-  <h1>{{ single_employee_task.user_first_name }} {{ single_employee_task.user_last_name }}'s tasks</h1>
-  <p><a href="{% url 'add_task_to_employee' pk=single_employee_task.id%}">Add new task</a>  <a href="{% url 'update_employee' pk=single_employee_task.id%}">Update employee tasks</a></p>
+  <h2>{{ single_employee_task.user_first_name }} {{ single_employee_task.user_last_name }}'s tasks</h2>
+  <h3><a href="{% url 'add_task_to_employee' pk=single_employee_task.id%}">Add new task</a>  <a href="{% url 'update_employee' pk=single_employee_task.id%}">Update employee tasks</a></h3>
   <ul>
     {% for task in single_employee_task.employee_task.all %}
       <li><a href="{% url 'task_id' pk=task.id%}">{{ task }}</a></li>

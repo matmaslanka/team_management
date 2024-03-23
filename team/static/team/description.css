@@ -1,0 +1,42 @@
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    text-align: center;
+    color: wheat;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+h3 a {
+    text-decoration: none;
+    color: rgb(233, 195, 124);
+}
+
+h3 a:hover,
+h3 a:active {
+    color: rgb(0, 138, 138);
+
+}
+
+p {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 30rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: wheat;
+    font-size: 1rem;
+    text-align: justify;
+}

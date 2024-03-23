@@ -1,11 +1,17 @@
 {% extends 'team/base.html' %}
 
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "team/description.css" %}">
+{% endblock %}
+
 {% block title %}
   Task details
 {% endblock %}
 
 {% block content %}
-  <h1>{{ single_task.task_title }} ({{ single_task.task_status }})</h1>
-  <p><a href="{% url 'update_task' pk=single_task.id%}">Update task</a>
+  <h2>{{ single_task.task_title }} ({{ single_task.task_status }})</h2>
+  <h3><a href="{% url 'update_task' pk=single_task.id%}">Update task</a></h3>
   <p>{{ single_task.task_description }}</p>
 {% endblock %}

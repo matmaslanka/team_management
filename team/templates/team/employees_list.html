@@ -1,4 +1,10 @@
 {% extends 'team/base.html' %}
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "team/list_style.css" %}">
+  <link rel="stylesheet" href="{% static "team/description.css" %}">
+{% endblock %}
 
 {% block title %}
   Employees list
@@ -7,7 +13,7 @@
 {% block content %}
   <h1>Team Manegament</h1>
   <h2>List of Employees</h2>
-  <p><a href={% url 'add_task' %}>Create task</a>  <a href={% url 'add_new_employee' %}>Create new employee</a></p>
+  <h3><a href={% url 'add_task' %}>Create task</a>  <a href={% url 'add_new_employee' %}>Create new employee</a></h3>
   
   <ul>
     {% for employee in employees %}

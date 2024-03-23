@@ -1,4 +1,10 @@
 {% extends 'team/base.html' %}
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "team/form_style.css" %}">
+  <link rel="stylesheet" href="{% static "team/description.css" %}">
+{% endblock %}
 
 {% block title %}
   Task update
