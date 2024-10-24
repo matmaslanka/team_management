@@ -1,5 +1,5 @@
 # Team management
-An application base on Django to manage team task. User can adds employees, creates task with their status and adds egsisting tasks to employees.
+An application based on Django to manage team tasks. The user can add employees, create tasks with their status, and assign existing tasks to employees.
 
 ## Installation
 
